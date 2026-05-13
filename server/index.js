@@ -12,10 +12,11 @@ const io = new Server(server, {
 });
 
 const mensajes = [];
+
 io.on('connection', (socket) => {
     console.log('Alguien se conectó');
     // Mensajes a todos
-    socket.emit('bienvenida', 'Holi UwU <3');
+    socket.emit('mensaje', mensajes);
 
     socket.on('mensaje', (mensaje) => {
         // A todos los que estén conectados
